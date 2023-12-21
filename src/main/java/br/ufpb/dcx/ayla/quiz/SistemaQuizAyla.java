@@ -21,9 +21,9 @@ public class SistemaQuizAyla implements SistemaQuiz{
     }
 
     @Override
-    public Pergunta sorteiaPergunta() {
+    public Pergunta sorteiaPergunta() throws PerguntaNaoExisteException {
         if (this.perguntas.size()==0) {
-            return null;
+            throw new PerguntaNaoExisteException("Não existe pergunta cadastrada");
         } else {
             //TODO: Depois melhorar usado random
             return this.perguntas.get(0);
